@@ -1,18 +1,17 @@
 import {Component, OnInit} from '@angular/core';
-import {RouterLink} from '@angular/router-deprecated';
+ import { bootstrap } from '@angular/platform-browser-dynamic';
 import {FormBuilder, ControlGroup, Validators} from '@angular/common';
 import {CanDeactivate, Router, RouteParams} from '@angular/router-deprecated';
 
 import {BasicValidators} from '../shared/basicValidators';
-import {MovieInfo} from './movie-config';
-import {MovieConfigService} from './movie-config.service';
+import {MovieInfo} from './movieInfo';
+import {MovieConfigService} from './movieconfig.service';
 
 @Component({
-    selector: 'movie-config-app',
-    templateUrl: 'app/movie-config/movie-config.component.html',    
-    providers: [MovieConfigService],
-    directives: [RouterLink]
-     
+  moduleId: module.id,
+  selector: 'movie-config-app',
+  templateUrl: 'movieconfig.component.html',  
+  providers: [MovieConfigService]
 })
 export class MovieConfigComponent implements OnInit, CanDeactivate {
 	form: ControlGroup;
