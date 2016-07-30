@@ -1,0 +1,110 @@
+<h1>{{ title }}</h1>
+<div class="container">    
+    <div>
+        <form [ngFormModel]="form" (ngSubmit)="save()">
+         <div class="row">
+             <div class="col-md-6 well">
+            <fieldset>                 
+                <div class="form-group">
+                    <label>Movie Title</label>
+                    <input [(ngModel)]="MovieInfo.title" #name="ngForm" ngControl="title" type="text" class="form-control">
+                    <div *ngIf="title.touched && !title.valid" class="alert alert-danger">
+                        Movie title is required.
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label>Year</label>
+                    <input [(ngModel)]="MovieInfo.year" #year="ngForm" ngControl="year" type="text" class="form-control">
+                    <div *ngIf="year.touched && !year.valid" class="alert alert-danger">
+                        Please type a valid year.
+                    </div>
+                </div>
+                  <div class="form-group">
+                    <label>YouTube Id</label>
+                    <input [(ngModel)]="MovieInfo.youtubeId" #youtubeId="ngForm" ngControl="youtubeId" type="text" class="form-control">
+                    <div *ngIf="youtubeId.touched && !youtubeId.valid" class="alert alert-danger">
+                        Please type a youtube id.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>YouTube URL</label>
+                    <input [(ngModel)]="MovieInfo.youtubeUrl" #youtubeUrl="ngForm" ngControl="youtubeUrl" type="text" class="form-control">
+                    <div *ngIf="youtubeUrl.touched && !youtubeUrl.valid" class="alert alert-danger">
+                        Please type a youtube url.
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label>Trailer Rating</label>
+                    <input [(ngModel)]="MovieInfo.trailerrating" #trailerrating="ngForm" ngControl="trailerrating" type="text" class="form-control">
+                    <div *ngIf="trailerrating.touched && !trailerrating.valid" class="alert alert-danger">
+                        Please type a trailer rating.
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label>Synopsis</label>
+                    <textarea [(ngModel)]="MovieInfo.synopsis" #synposis="ngForm" class="form-control custom-control" rows="3" style="resize:none"></textarea>                     
+                    <div *ngIf="synposis.touched && !synposis.valid" class="alert alert-danger">
+                        Please type a synopsis.
+                    </div>
+                </div>
+            </fieldset>
+             </div>
+         <div class="col-md-6 well">
+            <fieldset>                 
+                    <div class="form-group">
+                    <label>Cast(s)</label>
+                    <input [(ngModel)]="MovieInfo.casts" #casts="ngForm" ngControl="casts" type="text" class="form-control">
+                    <div *ngIf="casts.touched && !casts.valid" class="alert alert-danger">
+                        Please type cast(s).                     
+                    </div>
+                    </div>   
+                    <div class="form-group">
+                    <label>Director(s)</label>
+                    <input [(ngModel)]="MovieInfo.directors" #directors="ngForm" ngControl="directors" type="text" class="form-control">
+                    <div *ngIf="directors.touched && !directors.valid" class="alert alert-danger">
+                        Please type director(s).                     
+                    </div>
+                    </div>                   
+            </fieldset>
+            <fieldset>                 
+                    <div class="form-group">
+                    <label>Trailer Release Date</label>
+                    <input [(ngModel)]="MovieInfo.trailerReleaseDate" #trailerReleaseDate="ngForm"  ngControl="trailerReleaseDate" type="text" class="form-control">
+                    <div *ngIf="trailerReleaseDate.touched && !trailerReleaseDate.valid" class="alert alert-danger">
+                        Please type a trailer release date.                     
+                    </div>
+                    </div>   
+                    <div class="form-group">
+                    <label>Movie Release Date</label>
+                    <input [(ngModel)]="MovieInfo.movieReleaseDate" #movieReleaseDate="ngForm"  ngControl="movieReleaseDate" type="text" class="form-control">
+                    <div *ngIf="movieReleaseDate.touched && !movieReleaseDate.valid" class="alert alert-danger">
+                        Please type movie release date.                     
+                    </div>
+                    </div>                   
+            </fieldset>
+            <fieldset>                
+                    <div class="form-group">
+                    <label>Packshot Poster Url</label>
+                    <input [(ngModel)]="MovieInfo.packshotPosterUrl" #packshotPosterUrl="ngForm" ngControl="packshotPosterUrl" type="text" class="form-control">
+                    <div *ngIf="packshotPosterUrl.touched && !packshotPosterUrl.valid" class="alert alert-danger">
+                        Please type packshot poster url.                     
+                    </div>
+                    </div>   
+                    <div class="form-group">
+                    <label>Landscape Poster Url</label>
+                    <input [(ngModel)]="MovieInfo.landscapePosterUrl" #landscapePosterUrl="ngForm" ngControl="landscapePosterUrl" type="text" class="form-control">
+                    <div *ngIf="landscapePosterUrl.touched && !landscapePosterUrl.valid" class="alert alert-danger">
+                        Please type a landscape poster url.                     
+                    </div>
+                    </div>     
+                    <div class="pull-right">
+                        <button  type="submit" class="btn btn-primary" >
+                            Save
+                        </button>
+                    </div>              
+            </fieldset>
+         </div>          
+         </div>
+        </form>
+    </div>
+</div>
