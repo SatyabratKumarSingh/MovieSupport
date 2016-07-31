@@ -36,12 +36,21 @@ const barrels: string[] = [
   // App specific barrels.
   'app',
   'app/shared',
+  'angularfire2'
+   
   /** @cli-barrel */
 ];
 
 const cliSystemConfigPackages: any = {};
 barrels.forEach((barrelName: string) => {
+  if(barrelName=='angularfire2')
+  {     
+    cliSystemConfigPackages[barrelName] =  {main: 'angularfire2.js'}
+  }
+  else
+  {
   cliSystemConfigPackages[barrelName] = { main: 'index' };
+  }
 });
 
 /** Type declaration for ambient System. */
@@ -52,9 +61,14 @@ System.config({
   map: {
     '@angular': 'vendor/@angular',
     'rxjs': 'vendor/rxjs',
-    'main': 'main.js'
+    'main': 'main.js',
+    'angularfire2': 'vendor/angularfire2',
+    'firebase': 'vendor/firebase/firebase.js'
+    
   },
-  packages: cliSystemConfigPackages
+  packages:  
+    cliSystemConfigPackages
+   
 });
 
 // Apply the user's configuration.
